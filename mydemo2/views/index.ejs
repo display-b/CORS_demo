@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <script type="text/javascript" src="/js/jquery-1.7.1.js"></script>
+    <script type="text/javascript" >
+    //第一个demo
+    /*	$.ajax({
+    		url:"http://localhost:9000/users/getdata",
+    		type:"GET",
+    		success:function(res){
+    			console.log(res);
+    		}
+    	});*/
+	//测试预检请求的
+		var url = 'http://localhost:9000/users/getdata';
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', url, true);
+		xhr.setRequestHeader('X-Custom-Header', 'value');
+		xhr.send();
+    </script>
+  </body>
+</html>
